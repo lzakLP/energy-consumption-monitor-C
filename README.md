@@ -59,7 +59,7 @@ You can also test the source without installing a compiler:
 
 1. Open [OnlineGDB](https://www.onlinegdb.com/online_c_compiler).
 2. Select C as the language.
-3. Paste the contents of `main.c) into the editor.
+3. Paste the contents of `main.c` into the editor.
 4. Select Run and enter one of the menu options in the console.
 
 ## Project files
