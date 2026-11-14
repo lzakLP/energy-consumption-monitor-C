@@ -71,7 +71,7 @@ You can also test the source without installing a compiler:
 
 ## Notes
 
-All readings are fictional and intended for testing. The threshold is a simple statistical rule; it does not establish the cause of an unusual reading. Real-world monitoring would require actual meter data and additional context.
+All readings are fictional and intended for testing, created as a university project and my first steps coding in C. The threshold is a simple statistical rule; it does not establish the cause of an unusual reading. Real-world monitoring would require actual meter data and additional context.
 
 ## License
 
