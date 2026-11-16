@@ -1,78 +1,87 @@
 # Energy Consumption Monitor
 
-A small C program that demonstrates statistical analysis of daily electricity consumption. It calculates the average and population standard deviation of a sample dataset, then flags readings that exceed a threshold defined as the average plus two standard deviations.
+An educational project concept for analyzing daily electricity consumption with basic descriptive statistics in C.
 
-The dataset contains 31 fictional daily readings. The program is an educational statistical demonstration, not a trained artificial intelligence or machine-learning model.
+The documented approach calculates the average and population standard deviation of a sample dataset, then uses the threshold
 
-## Requirements
+`average + 2 × standard deviation`
 
-- GCC or another C compiler that supports C11
-- A terminal or command prompt
+to flag unusually high readings.
 
-## Build and run
+> **Repository status:** The current repository contains this README only. The C source code, build files, and license referenced by the earlier documentation are not present in the `main` branch. The program therefore cannot currently be compiled or executed from this repository.
 
-### Linux or macOS
+## Intended behavior
 
-1. Clone the repository:
-   ```bash
-   git clone https://github.com/lzakLP/energy-consumption-monitor-C.git
-   cd energy-consumption-monitor-C
-   ```
-2. Compile the program:
-   ```bash
-   gcc -std=c11 -Wall -Wextra -pedantic main.c -o energy_monitor -lm
-   ```
-3. Run it:
-   ```bash
-   ./energy_monitor
-   ```
+The planned demonstration uses 31 fictional daily electricity readings.
 
-### Windows with MinGW
+The intended program flow is:
 
-1. Clone the repository and open its folder:
-   ```bash
-   git clone https://github.com/lzakLP/energy-consumption-monitor-C.git
-   cd energy-consumption-monitor-C
-   ```
-2. Compile:
-   ```bash
-   gcc -std=c11 -Wall -Wextra -pedantic main.c -o energy_monitor.exe -lm
-   ```
-3. Run:
-   ```bash
-   energy_monitor.exe
-   ```
+1. Load or define the sample consumption readings.
+2. Calculate the arithmetic mean.
+3. Calculate the population standard deviation.
+4. Compute the alert threshold as the mean plus two standard deviations.
+5. Compare each daily reading with the threshold.
+6. Display the dataset and identify readings above the threshold.
 
-## Test the program
+The previously documented sample includes a final reading of 150 kWh, intended to demonstrate the alert condition. This behavior cannot be verified until the source code is available.
 
-When the program starts, use the menu:
+## Statistical method
 
-- Enter `1` to calculate the average, standard deviation, and alert threshold, and review each day's status.
-- Enter `2` to display the sample dataset.
-- Enter `0` to exit.
+For (n) readings (x_1, x_2, ldots, x_n), the arithmetic mean is:
 
-The final sample reading is intentionally set to 150 kWh. It should be identified as unusually high by the threshold-based check.
+`mean = (x1 + x2 + ... + xn) / n`
 
-## Run online
+The population standard deviation is:
 
-You can also test the source without installing a compiler:
+`standard_deviation = sqrt(sum((xi - mean)^2) / n)`
 
-1. Open [OnlineGDB](https://www.onlinegdb.com/online_c_compiler).
-2. Select C as the language.
-3. Paste the contents of `main.c` into the editor.
-4. Select Run and enter one of the menu options in the console.
+The alert threshold is:
 
-## Project files
+`threshold = mean + 2 * standard_deviation`
 
-- `main.c`: program source code
-- `Makefile`: optional build commands for systems with make
-- `.gitignore`: files excluded from version control
-- `LICENSE`: MIT License
+A reading above this threshold is flagged for review. This is a simple statistical rule and does not establish the cause of an unusual measurement.
 
-## Notes
+## Planned technology
 
-All readings are fictional and intended for testing, created as a university project and my first steps coding in C. The threshold is a simple statistical rule; it does not establish the cause of an unusual reading. Real-world monitoring would require actual meter data and additional context.
+- C language.
+- C11-compatible compiler.
+- GCC or MinGW.
+- Standard C library and math library.
 
-## License
+## Planned build workflow
 
-Distributed under the MIT License. See [LICENSE](LICENSE).
+Build instructions will be provided after the source code and build files are added to the repository.
+
+For reference, the intended GCC command is:
+
+```bash
+gcc -std=c11 -Wall -Wextra -pedantic main.c -o energy_monitor -lm
+```
+
+This command is not currently executable against the repository because `main.c` has not been committed.
+
+## Planned project files
+
+```text
+energy-consumption-monitor-C/
+├── main.c
+├── Makefile
+├── .gitignore
+├── LICENSE
+└── README.md
+```
+
+## Limitations
+
+- The dataset is fictional and intended for educational use.
+- The threshold is a basic statistical indicator, not a predictive model.
+- A value above the threshold should be investigated with additional context.
+- No real meter integration or automated data collection is included in the documented scope.
+
+## Next steps
+
+- [ ] Add the C source code to the repository.
+- [ ] Add and verify the build instructions.
+- [ ] Include the actual sample dataset and expected output.
+- [ ] Add a license file if the project is intended for redistribution.
+- [ ] Verify the program with a C11 compiler.
